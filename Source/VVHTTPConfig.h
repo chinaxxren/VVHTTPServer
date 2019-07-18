@@ -14,7 +14,9 @@
  该协议用于请求权限控制，以及POST、PUT等方法修改本地资源时的控制，若不实现这些委托方法，将按默认方式处理
  */
 @protocol VVHTTPRequestDelegate <NSObject>
+
 @optional
+
 /**
  请求头解析完成
 

@@ -4,13 +4,9 @@
     <list default="true" id="ba61955d-d8c8-47a9-958f-cf6f5f5e29d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/VVHTTPConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPConfig.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPConfig.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPConfig.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPRequestHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPRequestHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/VVHTTPConnectTask.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPConnectTask.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/VVHTTPConnectTask.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPConnectTask.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/VVHTTPRequestHandler.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPRequestHandler.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPResponseHandeler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPResponseHandeler.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPResponseHandeler.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPResponseHandeler.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPServer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPServer.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPServer.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Source/VVHTTPServer.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-687">
-              <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+            <state relative-caret-position="486">
+              <caret line="108" column="40" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
               <folding>
                 <element signature="e#121#145#0" expanded="true" />
               </folding>
@@ -33,10 +29,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/VVHTTPConnectTask.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
+              <folding>
+                <element signature="e#126#155#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Source/VVHTTPRequestHandler.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="90" column="99" selection-start-line="90" selection-start-column="99" selection-end-line="90" selection-end-column="99" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/VVHTTPRequestHandler.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+              <folding>
+                <element signature="e#129#162#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/VVHTTPConnectTask.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Source/VVHTTPConfig.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="132" column="11" selection-start-line="132" selection-start-column="11" selection-end-line="132" selection-end-column="11" />
+            <state relative-caret-position="275">
+              <caret line="101" column="11" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/VVHTTPConfig.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -59,9 +106,12 @@
       <find>ZGHTTPHTMLDirectory</find>
       <find>checkRequsetFinish</find>
       <find>zenggen</find>
+      <find>❌</find>
+      <find>filePath</find>
     </findStrings>
     <replaceStrings>
       <replace>waqu</replace>
+      <replace>!</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -84,10 +134,13 @@
         <option value="$PROJECT_DIR$/Demo/AppDelegate.m" />
         <option value="$PROJECT_DIR$/Source/VVHTTPResponseHandeler.m" />
         <option value="$PROJECT_DIR$/Source/VVHTTPServer.h" />
-        <option value="$PROJECT_DIR$/Source/VVHTTPConfig.h" />
         <option value="$PROJECT_DIR$/Source/VVHTTPConfig.m" />
         <option value="$PROJECT_DIR$/Source/VVHTTPResponseHandeler.h" />
         <option value="$PROJECT_DIR$/Source/VVHTTPServer.m" />
+        <option value="$PROJECT_DIR$/Source/VVHTTPConnectTask.h" />
+        <option value="$PROJECT_DIR$/Source/VVHTTPConnectTask.m" />
+        <option value="$PROJECT_DIR$/Source/VVHTTPConfig.h" />
+        <option value="$PROJECT_DIR$/Source/VVHTTPRequestHandler.m" />
       </list>
     </option>
   </component>
@@ -176,16 +229,23 @@
       <workItem from="1551449633211" duration="1654000" />
       <workItem from="1552290216299" duration="5025000" />
       <workItem from="1552297869124" duration="251000" />
-      <workItem from="1563431991517" duration="2066000" />
+      <workItem from="1563431991517" duration="3252000" />
     </task>
+    <task id="LOCAL-00001" summary="优化代码">
+      <created>1563435847839</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1563435847839</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8996000" />
+    <option name="totallyTimeSpent" value="10182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="991" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -235,6 +295,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="优化代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化代码" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/MMHTTPServer/MMHTTPConfig.m" />
@@ -293,20 +357,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/VVHTTPRequestHandler.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3094">
-          <caret line="182" column="23" selection-start-line="182" selection-start-column="23" selection-end-line="182" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/VVHTTPConfig.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/VVHTTPResponseHandeler.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -321,20 +371,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/VVHTTPConfig.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="132" column="11" selection-start-line="132" selection-start-column="11" selection-end-line="132" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/VVHTTPServer.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-687">
-          <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+        <state relative-caret-position="486">
+          <caret line="108" column="40" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
           <folding>
             <element signature="e#121#145#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/VVHTTPConnectTask.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
+          <folding>
+            <element signature="e#126#155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/VVHTTPConfig.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/VVHTTPConnectTask.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/VVHTTPRequestHandler.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="e#129#162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/VVHTTPConfig.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="101" column="11" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/VVHTTPRequestHandler.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="90" column="99" selection-start-line="90" selection-start-column="99" selection-end-line="90" selection-end-column="99" />
         </state>
       </provider>
     </entry>

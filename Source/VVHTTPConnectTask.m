@@ -13,7 +13,7 @@
 
 @property(nonatomic, readonly) VVHTTPConfig *config;
 @property(nonatomic, readonly) GCDAsyncSocket *socket;
-@property(nonatomic, copy) ZGHTTPTaskCompleteBlock completeBlock;
+@property(nonatomic, copy) VVHTTPTaskCompleteBlock completeBlock;
 @property(nonatomic, strong) VVHTTPRequestHandler *requestHandler;
 @property(nonatomic, strong) VVHTTPResponseHandeler *responseHandeler;
 
@@ -21,25 +21,23 @@
 
 @implementation VVHTTPConnectTask
 
-NSTimeInterval kZGHTTPConnectTimeout = 20;
+NSTimeInterval kVVHTTPConnectTimeout = 20;
 
-long kZGHTTPResquestHeadTag = 100;
-long kZGHTTPResquestBodyTag = 101;
-long kZGHTTPResponseHeadTag = 102;
-long kZGHTTPResPonseBodyTag = 103;
-
-
-long kZGHTTPResquestErrorTag = 108;
+long kVVHTTPResquestHeadTag = 100;
+long kVVHTTPResquestBodyTag = 101;
+long kVVHTTPResponseHeadTag = 102;
+long kVVHTTPResponseBodyTag = 103;
+long kVVHTTPResquestErrorTag = 108;
 
 + (instancetype)initWithConfig:(VVHTTPConfig *)config
                         socket:(GCDAsyncSocket *)socket
-                      complete:(ZGHTTPTaskCompleteBlock)completeBlock {
+                      complete:(VVHTTPTaskCompleteBlock)completeBlock {
     return [[self alloc] initWithConfig:config socket:socket complete:completeBlock];
 }
 
 - (instancetype)initWithConfig:(VVHTTPConfig *)config
                         socket:(GCDAsyncSocket *)socket
-                      complete:(ZGHTTPTaskCompleteBlock)completeBlock {
+                      complete:(VVHTTPTaskCompleteBlock)completeBlock {
     if (self = [self init]) {
         _config = config;
         _socket = socket;
@@ -49,35 +47,37 @@ long kZGHTTPResquestErrorTag = 108;
     return self;
 }
 
-
 - (void)execute {
-    [_socket readDataToData:[@"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding] withTimeout:kZGHTTPConnectTimeout tag:kZGHTTPResquestHeadTag];
+    [_socket readDataToData:[@"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding] withTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResquestHeadTag];
 }
 
 - (void)checkRequsetFinish {
     if (![_requestHandler isRequestFinish]) {
-        [_socket readDataWithTimeout:kZGHTTPConnectTimeout tag:kZGHTTPResquestBodyTag];
+        [_socket readDataWithTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResquestBodyTag];
     } else {
         self.responseHandeler = [VVHTTPResponseHandeler initWithRequestHead:_requestHandler.requestHead
                                                                    delegate:_config.responseDelegate
                                                                     rootDir:_config.rootDirectory];
 
-        [_socket writeData:[_responseHandeler readAllHeadData] withTimeout:kZGHTTPConnectTimeout tag:kZGHTTPResponseHeadTag];
+        [_socket writeData:[_responseHandeler readAllHeadData] withTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResponseHeadTag];
     }
 }
 
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
-    if (tag == kZGHTTPResquestHeadTag) {
-        self.requestHandler = [VVHTTPRequestHandler initWithHeadData:data delegate:_config.requestDelegate rootDir:_config.rootDirectory];
+    if (tag == kVVHTTPResquestHeadTag) {
+        self.requestHandler = [VVHTTPRequestHandler initWithHeadData:data
+                                                            delegate:_config.requestDelegate
+                                                             rootDir:_config.rootDirectory];
         NSError *error = [_requestHandler invalidError];
         if (error) {
-            self.responseHandeler = [VVHTTPResponseHandeler initWithError:error requestHead:_requestHandler.requestHead];
-            [_socket writeData:[_responseHandeler readAllHeadData] withTimeout:kZGHTTPConnectTimeout tag:kZGHTTPResquestErrorTag];
+            self.responseHandeler = [VVHTTPResponseHandeler initWithError:error
+                                                              requestHead:_requestHandler.requestHead];
+            [_socket writeData:[_responseHandeler readAllHeadData] withTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResquestErrorTag];
         } else {
             [self checkRequsetFinish];
         }
-    } else if (tag == kZGHTTPResquestBodyTag) {
+    } else if (tag == kVVHTTPResquestBodyTag) {
         [_requestHandler writeBodyData:data];
         [self checkRequsetFinish];
     }
@@ -89,7 +89,7 @@ long kZGHTTPResquestErrorTag = 108;
             [_socket disconnect];
     } else {
         NSData *data = [_responseHandeler readBodyData];
-        [_socket writeData:data withTimeout:kZGHTTPConnectTimeout tag:kZGHTTPResPonseBodyTag];
+        [_socket writeData:data withTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResponseBodyTag];
         if ([_responseHandeler bodyEnd])
             [_socket disconnectAfterWriting];
     }
@@ -97,11 +97,11 @@ long kZGHTTPResquestErrorTag = 108;
 
 
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag {
-    if (tag == kZGHTTPResquestErrorTag) {
+    if (tag == kVVHTTPResquestErrorTag) {
         [_socket disconnectAfterWriting];
-    } else if (tag == kZGHTTPResponseHeadTag) {
+    } else if (tag == kVVHTTPResponseHeadTag) {
         [self checkResponsetFinish];
-    } else if (tag == kZGHTTPResPonseBodyTag) {
+    } else if (tag == kVVHTTPResponseBodyTag) {
         [self checkResponsetFinish];
     }
 }

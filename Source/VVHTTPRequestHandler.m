@@ -66,32 +66,31 @@
     NSError *error;
     if ([_delegate respondsToSelector:@selector(requestRefuse:)]) {
         if ([_delegate requestRefuse:_requestHead]) {
-            error = [NSError errorWithDomain:@"服务器拒绝访问❌" code:404 userInfo:nil];
+            error = [NSError errorWithDomain:@"服务器拒绝访问!" code:404 userInfo:nil];
             return error;
         }
     }
     if ([[NSHomeDirectory() stringByDeletingLastPathComponent] rangeOfString:[self filePath]].location != NSNotFound) {
-        error = [NSError errorWithDomain:@"服务器系统目录无法访问❌" code:404 userInfo:nil];
+        error = [NSError errorWithDomain:@"服务器系统目录无法访问!" code:404 userInfo:nil];
         return error;
     }
     return nil;
 }
 
-
 - (NSError *)invalidError {
     if (![_requestHead.pro isEqualToString:@"HTTP"])
-        return [NSError errorWithDomain:[NSString stringWithFormat:@"服务器不支持%@协议❌", _requestHead.pro]
+        return [NSError errorWithDomain:[NSString stringWithFormat:@"服务器不支持%@协议!", _requestHead.pro]
                                    code:501
                                userInfo:nil];
     if (![_requestHead.version isEqualToString:@"1.1"])
-        return [NSError errorWithDomain:[NSString stringWithFormat:@"服务器不支持%@协议版本❌", _requestHead.version]
+        return [NSError errorWithDomain:[NSString stringWithFormat:@"服务器不支持%@协议版本!", _requestHead.version]
                                    code:501
                                userInfo:nil];
     NSError *error = [self refuseError];
     if (error) return error;
-    if ([_requestHead.method isEqualToString:@"POST"] || [_requestHead.method isEqualToString:@"POST"]) {
+    if ([_requestHead.method isEqualToString:@"POST"] || [_requestHead.method isEqualToString:@"GET"]) {
         if (_bodyDataLength == 0)
-            return [NSError errorWithDomain:[NSString stringWithFormat:@"请求参数出错，%@方法需要指定body长度❌", _requestHead.method]
+            return [NSError errorWithDomain:[NSString stringWithFormat:@"请求参数出错，%@方法需要指定body长度!", _requestHead.method]
                                        code:411
                                    userInfo:nil];
 
@@ -147,15 +146,15 @@
 
 - (instancetype)initWithData:(NSData *)data {
     if (self = [self init]) {
-        if (![self loadData:data])return nil;
+        if (![self parseData:data])return nil;
     }
     return self;
 }
 
-- (BOOL)loadData:(NSData *)data {
+- (BOOL)parseData:(NSData *)data {
     NSString *headStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSArray<NSString *> *headArray = [headStr componentsSeparatedByString:@"\r\n"];
-    NSMutableDictionary *head = @{}.mutableCopy;
+    NSMutableDictionary *headDict = @{}.mutableCopy;
     __block BOOL res = YES;
     [headArray enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
         if (obj.length == 0)return;
@@ -180,11 +179,11 @@
 
         NSArray *headItems = [obj componentsSeparatedByString:@": "];
         if (headItems.count != 2)return;
-        head[headItems[0]] = [headItems[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        headDict[headItems[0]] = [headItems[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     }];
 
-    self.host = head[@"Host"];
-    self.headDict = head;
+    self.host = headDict[@"Host"];
+    self.headDict = headDict;
     return res;
 }
 
@@ -202,6 +201,7 @@
         length = length != 0 ? length + 1 : NSUIntegerMax;
         return NSMakeRange(start, length);
     }
+
     return NSMakeRange(0, 0);
 }
 
