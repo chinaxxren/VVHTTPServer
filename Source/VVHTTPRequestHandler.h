@@ -47,7 +47,7 @@
 
 - (void)setPath:(NSString *)path;
 
-- (void)setProtocol:(NSString *)pro;
+- (void)setPro:(NSString *)pro;
 
 - (void)setVersion:(NSString *)version;
 

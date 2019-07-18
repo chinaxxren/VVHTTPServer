@@ -496,8 +496,8 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
                 @"Server": @"VVHTTPServer",
                 @"Accept-Ranges": @"bytes"
         };
-        self.headDic = dic;
-        self.protocol = head.protocol;
+        self.headDict = dic;
+        self.pro = head.pro;
         self.version = head.version;
         self.stateCode = [head hasRangeHead] ? 206 : 200;
         self.stateDesc = @"OK";
@@ -507,15 +507,15 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
 
 - (void)setHeadValue:(NSString *)value WithField:(NSString *)field {
     if (value == nil || field == nil)return;
-    NSMutableDictionary *dic = self.headDic.mutableCopy;
+    NSMutableDictionary *dic = self.headDict.mutableCopy;
     dic[field] = value;
-    self.headDic = dic;
+    self.headDict = dic;
 }
 
 - (NSData *)dataOfHead {
     NSMutableString *headStr = @"".mutableCopy;
-    [headStr appendFormat:@"%@/%@ %zd %@\r\n", self.protocol, self.version, self.stateCode, self.stateDesc];
-    [self.headDic enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
+    [headStr appendFormat:@"%@/%@ %zd %@\r\n", self.pro, self.version, self.stateCode, self.stateDesc];
+    [self.headDict enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
         [headStr appendFormat:@"%@:%@\r\n", key, obj];
     }];
     [headStr appendString:@"\r\n"];

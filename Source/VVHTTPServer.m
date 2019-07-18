@@ -18,7 +18,7 @@
 
 @property(nonatomic, strong) dispatch_queue_t serverQueue;
 @property(nonatomic, strong) dispatch_queue_t taskQueue;
-@property(nonatomic, strong) GCDAsyncSocket *serverSocket;
+@property(nonatomic, strong) GCDAsyncSocket *asyncSocket;
 @property(nonatomic, strong) NSMutableArray<VVHTTPConnectTask *> *tasks;
 @property(nonatomic, strong) NSRecursiveLock *taskLock;
 
@@ -33,9 +33,10 @@
 
 - (instancetype)initWithConfig:(void (^)(VVHTTPConfig *))configBlock {
     if (self = [self init]) {
-        _serverQueue = dispatch_queue_create("com.waqu.VVHTTPServer.serverQueue", NULL);
         _taskQueue = dispatch_queue_create("com.waqu.VVHTTPServer.taskQueue", NULL);
-        _serverSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:_serverQueue];
+        _asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:_serverQueue];
+
+        _serverQueue = dispatch_queue_create("com.waqu.VVHTTPServer.serverQueue", NULL);
         _config = [[VVHTTPConfig alloc] init];
         if (configBlock) configBlock(_config);
         _config.taskQueue = _taskQueue;
@@ -47,11 +48,10 @@
     dispatch_sync(self.serverQueue, block);
 }
 
-
 - (NSError *)start {
     __block NSError *error;
     [self serverSyncOperation:^{
-        [self.serverSocket acceptOnPort:self.config.port error:&error];
+        [self.asyncSocket acceptOnPort:self.config.port error:&error];
     }];
     return error;
 }
@@ -60,11 +60,11 @@
     [_taskLock lock];
     [_tasks removeAllObjects];
     [_taskLock unlock];
-    [_serverSocket disconnect];
+    [_asyncSocket disconnect];
 }
 
 - (BOOL)isRunning {
-    return _serverSocket.isConnected;
+    return _asyncSocket.isConnected;
 }
 
 - (uint16_t)port {
@@ -107,16 +107,16 @@
     if (!_taskLock) self.taskLock = [[NSRecursiveLock alloc] init];
     if (!_tasks) self.tasks = @[].mutableCopy;
     __weak typeof(self) weakSelf = self;
-    VVHTTPConnectTask *connectTast = [VVHTTPConnectTask initWithConfig:_config socket:newSocket complete:^(VVHTTPConnectTask *task) {
+    VVHTTPConnectTask *connectTask = [VVHTTPConnectTask initWithConfig:_config socket:newSocket complete:^(VVHTTPConnectTask *task) {
         __strong typeof(self) strongSelf = weakSelf;
         [strongSelf.taskLock lock];
         [strongSelf.tasks removeObject:task];
         [strongSelf.taskLock unlock];
     }];
     [_taskLock lock];
-    [_tasks addObject:connectTast];
+    [_tasks addObject:connectTask];
     [_taskLock unlock];
-    [connectTast execute];
+    [connectTask execute];
 }
 
 @end

@@ -56,7 +56,7 @@
 
 - (NSData *)dataOfHead;
 
-- (void)setProtocol:(NSString *)protocol;
+- (void)setPro:(NSString *)pro;
 
 - (void)setVersion:(NSString *)version;
 
@@ -64,6 +64,6 @@
 
 - (void)setStateDesc:(NSString *)stateDesc;
 
-- (void)setHeadDic:(NSDictionary *)headDic;
+- (void)setHeadDict:(NSDictionary *)headDic;
 
 @end

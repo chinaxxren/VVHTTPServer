@@ -19,8 +19,8 @@
     _path = [path copy];
 }
 
-- (void)setProtocol:(NSString *)pro {
-    _protocol = [pro copy];
+- (void)setPro:(NSString *)pro {
+    _pro = [pro copy];
 }
 
 - (void)setVersion:(NSString *)version {
@@ -39,8 +39,8 @@
 
 @implementation VVHTTPResponseHead
 
-- (void)setProtocol:(NSString *)protocol {
-    _protocol = [protocol copy];
+- (void)setPro:(NSString *)pro {
+    _pro = [pro copy];
 }
 
 - (void)setVersion:(NSString *)version {
@@ -55,8 +55,8 @@
     _stateDesc = [stateDesc copy];
 }
 
-- (void)setHeadDic:(NSDictionary *)headDic {
-    _headDic = [headDic copy];
+- (void)setHeadDict:(NSDictionary *)headDic {
+    _headDict = [headDic copy];
 }
 
 @end

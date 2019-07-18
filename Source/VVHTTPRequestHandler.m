@@ -79,8 +79,8 @@
 
 
 - (NSError *)invalidError {
-    if (![_requestHead.protocol isEqualToString:@"HTTP"])
-        return [NSError errorWithDomain:[NSString stringWithFormat:@"服务器不支持%@协议❌", _requestHead.protocol]
+    if (![_requestHead.pro isEqualToString:@"HTTP"])
+        return [NSError errorWithDomain:[NSString stringWithFormat:@"服务器不支持%@协议❌", _requestHead.pro]
                                    code:501
                                userInfo:nil];
     if (![_requestHead.version isEqualToString:@"1.1"])
@@ -173,7 +173,7 @@
                 *stop = YES;
                 res = NO;
             }
-            self.protocol = array[0];
+            self.pro = array[0];
             self.version = array[1];
             return;
         }

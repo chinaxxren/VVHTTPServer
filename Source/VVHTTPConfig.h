@@ -101,7 +101,7 @@
 
 @property(nonatomic, readonly) NSString *method;
 @property(nonatomic, readonly) NSString *path;
-@property(nonatomic, readonly) NSString *protocol;
+@property(nonatomic, readonly) NSString *pro;
 @property(nonatomic, readonly) NSString *version;
 @property(nonatomic, readonly) NSString *host;
 @property(nonatomic, readonly) NSDictionary *headDict;
@@ -111,11 +111,11 @@
 
 @interface VVHTTPResponseHead : NSObject
 
-@property(nonatomic, readonly) NSString *protocol;
+@property(nonatomic, readonly) NSString *pro;
 @property(nonatomic, readonly) NSString *version;
 @property(nonatomic, readonly) NSInteger stateCode;
 @property(nonatomic, readonly) NSString *stateDesc;
-@property(nonatomic, readonly) NSDictionary *headDic;
+@property(nonatomic, readonly) NSDictionary *headDict;
 
 @end
 
