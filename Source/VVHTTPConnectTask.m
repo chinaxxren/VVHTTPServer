@@ -52,7 +52,7 @@ long kVVHTTPResquestErrorTag = 108;
     [_socket readDataToData:[@"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding] withTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResquestHeadTag];
 }
 
-- (void)checkRequsetFinish {
+- (void)checkRequseFinish {
     if (![_requestHandler isRequestFinish]) {
         [_socket readDataWithTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResquestBodyTag];
     } else {
@@ -64,6 +64,17 @@ long kVVHTTPResquestErrorTag = 108;
     }
 }
 
+- (void)checkResponseFinish {
+    if ([_responseHandeler bodyEnd]) {
+        if (![_responseHandeler shouldConnectKeepLive])
+            [_socket disconnect];
+    } else {
+        NSData *data = [_responseHandeler readBodyData];
+        [_socket writeData:data withTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResponseBodyTag];
+        if ([_responseHandeler bodyEnd])
+            [_socket disconnectAfterWriting];
+    }
+}
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
     if (tag == kVVHTTPResquestHeadTag) {
@@ -76,23 +87,11 @@ long kVVHTTPResquestErrorTag = 108;
                                                               requestHead:_requestHandler.requestHead];
             [_socket writeData:[_responseHandeler readAllHeadData] withTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResquestErrorTag];
         } else {
-            [self checkRequsetFinish];
+            [self checkRequseFinish];
         }
     } else if (tag == kVVHTTPResquestBodyTag) {
         [_requestHandler writeBodyData:data];
-        [self checkRequsetFinish];
-    }
-}
-
-- (void)checkResponsetFinish {
-    if ([_responseHandeler bodyEnd]) {
-        if (![_responseHandeler shouldConnectKeepLive])
-            [_socket disconnect];
-    } else {
-        NSData *data = [_responseHandeler readBodyData];
-        [_socket writeData:data withTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResponseBodyTag];
-        if ([_responseHandeler bodyEnd])
-            [_socket disconnectAfterWriting];
+        [self checkRequseFinish];
     }
 }
 
@@ -100,9 +99,9 @@ long kVVHTTPResquestErrorTag = 108;
     if (tag == kVVHTTPResquestErrorTag) {
         [_socket disconnectAfterWriting];
     } else if (tag == kVVHTTPResponseHeadTag) {
-        [self checkResponsetFinish];
+        [self checkResponseFinish];
     } else if (tag == kVVHTTPResponseBodyTag) {
-        [self checkResponsetFinish];
+        [self checkResponseFinish];
     }
 }
 
