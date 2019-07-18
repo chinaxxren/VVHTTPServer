@@ -9,24 +9,28 @@
 #import "AppDelegate.h"
 
 #import "VVHTTPServer.h"
+#import "VVHTTPRequestDelegate.h"
+#import "VVHTTPResponseDelegate.h"
 
 #include <arpa/inet.h>
 #include <net/if.h>
 #include <ifaddrs.h>
 
 @interface AppDelegate () <VVHTTPRequestDelegate, VVHTTPResponseDelegate>
+
 @property(nonatomic, strong) VVHTTPServer *httpServer;
+
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.httpServer = [[VVHTTPServer alloc] initWithConfig:^(VVHTTPConfig *config) {
-        config.port = 12345;
+        config.port = 62345;
         config.rootDirectory = NSHomeDirectory();
     }];
     NSError *error = [self.httpServer start];
-    NSLog(@"http://%@:%zd  error:%@", [self localWiFiIPAddress], self.httpServer.port, error);
+    NSLog(@"http://%@:%d  error:%@", [self localWiFiIPAddress], self.httpServer.port, error);
     NSLog(@"%@", NSHomeDirectory());
     return YES;
 }

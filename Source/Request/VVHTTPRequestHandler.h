@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VVHTTPConfig.h"
 
+@class VVHTTPRequestHead;
 
 @interface VVHTTPRequestHandler : NSObject
 
@@ -33,30 +34,5 @@
 - (void)writeBodyData:(NSData *)data;
 
 - (void)writeBodyDataError:(NSError *)error;
-
-@end
-
-
-@interface VVHTTPRequestHead (ZGHTTPPrivateAPI)
-
-+ (instancetype)initWithData:(NSData *)data;
-
-- (instancetype)initWithData:(NSData *)data;
-
-- (void)setMethod:(NSString *)method;
-
-- (void)setPath:(NSString *)path;
-
-- (void)setPro:(NSString *)pro;
-
-- (void)setVersion:(NSString *)version;
-
-- (void)setHost:(NSString *)host;
-
-- (void)setHeadDict:(NSDictionary *)headDict;
-
-- (BOOL)hasRangeHead;
-
-- (NSRange)range;
 
 @end

@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "VVHTTPConfig.h"
 
+@class VVHTTPResponseHead;
+@class VVHTTPRequestHead;
+
 @interface VVHTTPResponseHandeler : NSObject
 
 @property(nonatomic, readonly) VVHTTPResponseHead *responseHead;
@@ -41,29 +44,3 @@
 
 @end
 
-
-@interface VVHTTPResponseHead (ZGHTTPPrivateAPI)
-
-+ (instancetype)initWithError:(NSError *)error requestHead:(VVHTTPRequestHead *)head;
-
-+ (instancetype)initWithRequestHead:(VVHTTPRequestHead *)head;
-
-- (instancetype)initWithError:(NSError *)error requestHead:(VVHTTPRequestHead *)head;
-
-- (instancetype)initWithRequestHead:(VVHTTPRequestHead *)head;
-
-- (void)setHeadValue:(NSString *)value WithField:(NSString *)field;
-
-- (NSData *)dataOfHead;
-
-- (void)setPro:(NSString *)pro;
-
-- (void)setVersion:(NSString *)version;
-
-- (void)setStateCode:(NSInteger)stateCode;
-
-- (void)setStateDesc:(NSString *)stateDesc;
-
-- (void)setHeadDict:(NSDictionary *)headDic;
-
-@end

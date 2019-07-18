@@ -10,8 +10,6 @@
 		2DF84CF91F2A13590052A3A6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DF84CF81F2A13590052A3A6 /* Launch Screen.storyboard */; };
 		2DF84D051F2F4C430052A3A6 /* VVHTTPConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF84CFC1F2F4C430052A3A6 /* VVHTTPConfig.m */; };
 		2DF84D061F2F4C430052A3A6 /* VVHTTPConnectTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF84CFE1F2F4C430052A3A6 /* VVHTTPConnectTask.m */; };
-		2DF84D071F2F4C430052A3A6 /* VVHTTPRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF84D001F2F4C430052A3A6 /* VVHTTPRequestHandler.m */; };
-		2DF84D081F2F4C430052A3A6 /* VVHTTPResponseHandeler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF84D021F2F4C430052A3A6 /* VVHTTPResponseHandeler.m */; };
 		2DF84D091F2F4C430052A3A6 /* VVHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF84D041F2F4C430052A3A6 /* VVHTTPServer.m */; };
 		85BD59131EE69895004C11E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BD59121EE69895004C11E2 /* main.m */; };
 		85BD59161EE69895004C11E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BD59151EE69895004C11E2 /* AppDelegate.m */; };
@@ -20,6 +18,11 @@
 		85BD591E1EE69895004C11E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85BD591D1EE69895004C11E2 /* Assets.xcassets */; };
 		85BD592C1EE69895004C11E2 /* DemoServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BD592B1EE69895004C11E2 /* DemoServiceTests.m */; };
 		8985F1CF07B3CEF7EFB7C6CC /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 963E47A2616A38448B050499 /* libPods-Demo.a */; };
+		C3AE60C18F2DB752EFE63305 /* VVHTTPResourceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE69D3E8CB249D107DF0C2 /* VVHTTPResourceInfo.m */; };
+		C3AE6A37B440B92DE2CD6894 /* VVHTTPResponseHandeler.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6F78E222B16F17251E2C /* VVHTTPResponseHandeler.m */; };
+		C3AE6B97D9F4BC251733CD11 /* VVHTTPResponseHead.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6DD7C608F3DEBD3CC89C /* VVHTTPResponseHead.m */; };
+		C3AE6F2A7F5840497DF0E64E /* VVHTTPRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE663F471547134E0CB6D1 /* VVHTTPRequestHandler.m */; };
+		C3AE6FB86C0D6954C94C4404 /* VVHTTPRequestHead.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6C39DCE7C45A2688E272 /* VVHTTPRequestHead.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +41,6 @@
 		2DF84CFC1F2F4C430052A3A6 /* VVHTTPConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVHTTPConfig.m; sourceTree = "<group>"; };
 		2DF84CFD1F2F4C430052A3A6 /* VVHTTPConnectTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPConnectTask.h; sourceTree = "<group>"; };
 		2DF84CFE1F2F4C430052A3A6 /* VVHTTPConnectTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVHTTPConnectTask.m; sourceTree = "<group>"; };
-		2DF84CFF1F2F4C430052A3A6 /* VVHTTPRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPRequestHandler.h; sourceTree = "<group>"; };
-		2DF84D001F2F4C430052A3A6 /* VVHTTPRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVHTTPRequestHandler.m; sourceTree = "<group>"; };
-		2DF84D011F2F4C430052A3A6 /* VVHTTPResponseHandeler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPResponseHandeler.h; sourceTree = "<group>"; };
-		2DF84D021F2F4C430052A3A6 /* VVHTTPResponseHandeler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVHTTPResponseHandeler.m; sourceTree = "<group>"; };
 		2DF84D031F2F4C430052A3A6 /* VVHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPServer.h; sourceTree = "<group>"; };
 		2DF84D041F2F4C430052A3A6 /* VVHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVHTTPServer.m; sourceTree = "<group>"; };
 		2F5D60F3D3195E47BEAA7B0E /* Pods-SampleHttpService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleHttpService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleHttpService/Pods-SampleHttpService.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +59,18 @@
 		963E47A2616A38448B050499 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA29172C7D7D609CB5FC6748 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		C0739045B687518DA41050E7 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		C3AE60269978FE44C17FD2DA /* VVHTTPResponseHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPResponseHead.h; sourceTree = "<group>"; };
+		C3AE6380C50BD80DE3953724 /* VVHTTPRequestHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPRequestHead.h; sourceTree = "<group>"; };
+		C3AE6527D27636394B9D932B /* VVHTTPResponseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPResponseDelegate.h; sourceTree = "<group>"; };
+		C3AE663F471547134E0CB6D1 /* VVHTTPRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVHTTPRequestHandler.m; sourceTree = "<group>"; };
+		C3AE69D3E8CB249D107DF0C2 /* VVHTTPResourceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVHTTPResourceInfo.m; sourceTree = "<group>"; };
+		C3AE6BBC4983B33CB6ACD96F /* VVHTTPResponseHandeler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPResponseHandeler.h; sourceTree = "<group>"; };
+		C3AE6C39DCE7C45A2688E272 /* VVHTTPRequestHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVHTTPRequestHead.m; sourceTree = "<group>"; };
+		C3AE6DD7C608F3DEBD3CC89C /* VVHTTPResponseHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVHTTPResponseHead.m; sourceTree = "<group>"; };
+		C3AE6EF63816E3120681BBED /* VVHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		C3AE6F78E222B16F17251E2C /* VVHTTPResponseHandeler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVHTTPResponseHandeler.m; sourceTree = "<group>"; };
+		C3AE6FA1A39B3BD4020E29E4 /* VVHTTPRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPRequestHandler.h; sourceTree = "<group>"; };
+		C3AE6FC82849E6409BECFD45 /* VVHTTPResourceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVHTTPResourceInfo.h; sourceTree = "<group>"; };
 		EB48E406B3DC73F65DE47707 /* Pods-SampleHttpService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleHttpService.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleHttpService/Pods-SampleHttpService.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,12 +100,12 @@
 				2DF84CFC1F2F4C430052A3A6 /* VVHTTPConfig.m */,
 				2DF84CFD1F2F4C430052A3A6 /* VVHTTPConnectTask.h */,
 				2DF84CFE1F2F4C430052A3A6 /* VVHTTPConnectTask.m */,
-				2DF84CFF1F2F4C430052A3A6 /* VVHTTPRequestHandler.h */,
-				2DF84D001F2F4C430052A3A6 /* VVHTTPRequestHandler.m */,
-				2DF84D011F2F4C430052A3A6 /* VVHTTPResponseHandeler.h */,
-				2DF84D021F2F4C430052A3A6 /* VVHTTPResponseHandeler.m */,
 				2DF84D031F2F4C430052A3A6 /* VVHTTPServer.h */,
 				2DF84D041F2F4C430052A3A6 /* VVHTTPServer.m */,
+				C3AE6F87D7AEFAD28AA98DE9 /* Request */,
+				C3AE6EC22C2958704D3FE7B2 /* Respose */,
+				C3AE69D3E8CB249D107DF0C2 /* VVHTTPResourceInfo.m */,
+				C3AE6FC82849E6409BECFD45 /* VVHTTPResourceInfo.h */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
@@ -170,6 +181,30 @@
 				963E47A2616A38448B050499 /* libPods-Demo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3AE6EC22C2958704D3FE7B2 /* Respose */ = {
+			isa = PBXGroup;
+			children = (
+				C3AE6F78E222B16F17251E2C /* VVHTTPResponseHandeler.m */,
+				C3AE6BBC4983B33CB6ACD96F /* VVHTTPResponseHandeler.h */,
+				C3AE6DD7C608F3DEBD3CC89C /* VVHTTPResponseHead.m */,
+				C3AE60269978FE44C17FD2DA /* VVHTTPResponseHead.h */,
+				C3AE6527D27636394B9D932B /* VVHTTPResponseDelegate.h */,
+			);
+			path = Respose;
+			sourceTree = "<group>";
+		};
+		C3AE6F87D7AEFAD28AA98DE9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				C3AE6FA1A39B3BD4020E29E4 /* VVHTTPRequestHandler.h */,
+				C3AE663F471547134E0CB6D1 /* VVHTTPRequestHandler.m */,
+				C3AE6C39DCE7C45A2688E272 /* VVHTTPRequestHead.m */,
+				C3AE6380C50BD80DE3953724 /* VVHTTPRequestHead.h */,
+				C3AE6EF63816E3120681BBED /* VVHTTPRequestDelegate.h */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,14 +332,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DF84D081F2F4C430052A3A6 /* VVHTTPResponseHandeler.m in Sources */,
 				2DF84D091F2F4C430052A3A6 /* VVHTTPServer.m in Sources */,
 				2DF84D051F2F4C430052A3A6 /* VVHTTPConfig.m in Sources */,
 				85BD59191EE69895004C11E2 /* ViewController.m in Sources */,
 				85BD59161EE69895004C11E2 /* AppDelegate.m in Sources */,
 				85BD59131EE69895004C11E2 /* main.m in Sources */,
 				2DF84D061F2F4C430052A3A6 /* VVHTTPConnectTask.m in Sources */,
-				2DF84D071F2F4C430052A3A6 /* VVHTTPRequestHandler.m in Sources */,
+				C3AE6F2A7F5840497DF0E64E /* VVHTTPRequestHandler.m in Sources */,
+				C3AE6A37B440B92DE2CD6894 /* VVHTTPResponseHandeler.m in Sources */,
+				C3AE6FB86C0D6954C94C4404 /* VVHTTPRequestHead.m in Sources */,
+				C3AE6B97D9F4BC251733CD11 /* VVHTTPResponseHead.m in Sources */,
+				C3AE60C18F2DB752EFE63305 /* VVHTTPResourceInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

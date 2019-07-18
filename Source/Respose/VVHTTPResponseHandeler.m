@@ -7,7 +7,11 @@
 //
 
 #import "VVHTTPResponseHandeler.h"
-#import "VVHTTPRequestHandler.h"
+
+#import "VVHTTPResourceInfo.h"
+#import "VVHTTPResponseHead.h"
+#import "VVHTTPResponseDelegate.h"
+#import "VVHTTPRequestHead.h"
 
 @interface VVHTTPHTMLDirectory : NSObject
 
@@ -217,7 +221,7 @@ static NSString *const VVHTTPHTMLSizeDescending = @"size-descending";
 
 @implementation VVHTTPResponseHandeler
 
-NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
+NSUInteger const kVVHTTPDataReadMax = HUGE_VALL;
 
 
 + (instancetype)initWithError:(NSError *)error requestHead:(VVHTTPRequestHead *)head {
@@ -242,8 +246,6 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
 - (instancetype)initWithRequestHead:(VVHTTPRequestHead *)head
                            delegate:(id <VVHTTPResponseDelegate>)delegate
                             rootDir:(NSString *)dir {
-    NSLog(@"%@", head.path);
-//    NSLog(@"%@",head.headDic);
     if (self = [self init]) {
         _requestHead = head;
         _responseHead = [VVHTTPResponseHead initWithRequestHead:head];
@@ -257,7 +259,7 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
             }
         } else {
             _responseHead.stateCode = 404;
-            _responseHead.stateDesc = [@"服务器非法操作❌" stringByRemovingPercentEncoding];
+            _responseHead.stateDesc = [@"服务器非法操作!" stringByRemovingPercentEncoding];
         }
     }
     return self;
@@ -273,7 +275,7 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
     }
     NSString *redirectUrl = [self redirectUrl];
     if (redirectUrl) {
-        [_responseHead setHeadValue:redirectUrl WithField:@"Location"];
+        [_responseHead setHeadValue:redirectUrl withField:@"Location"];
         _responseHead.stateCode = 303;
         return;
     }
@@ -292,7 +294,7 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
 //            self.filePath = @"/Users/egova/Downloads/favicon.ico";
         } else {
             _responseHead.stateCode = 404;
-            _responseHead.stateDesc = [@"访问资源不存在❌" stringByRemovingPercentEncoding];
+            _responseHead.stateDesc = [@"访问资源不存在!" stringByRemovingPercentEncoding];
             return;
         }
     }
@@ -330,7 +332,7 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
                 _bodyDataLength = length - range.location > range.length ? range.length : length - range.location;
                 _bodyDataOffset = range.location;
                 NSString *contentRange = [NSString stringWithFormat:@"bytes %llu-%llu/%llu", _bodyDataOffset, _bodyDataOffset + _bodyDataLength - 1, length];
-                [_responseHead setHeadValue:contentRange WithField:@"Content-Range"];
+                [_responseHead setHeadValue:contentRange withField:@"Content-Range"];
             } else {
                 _bodyDataLength = length;
             }
@@ -369,13 +371,13 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
         _bodyDataLength = length - range.location > range.length ? range.length : length - range.location;
         _bodyDataOffset = range.location;
         NSString *contentRange = [NSString stringWithFormat:@"bytes %llu-%llu/%llu", _bodyDataOffset, _bodyDataOffset + _bodyDataLength - 1, length];
-        [_responseHead setHeadValue:contentRange WithField:@"Content-Range"];
+        [_responseHead setHeadValue:contentRange withField:@"Content-Range"];
     } else {
         _bodyDataLength = _data.length;
         _bodyDataOffset = 0;
     }
-    [_responseHead setHeadValue:@"close" WithField:@"Connection"];
-    [_responseHead setHeadValue:@"text/html; charset=utf-8" WithField:@"Content-Type"];
+    [_responseHead setHeadValue:@"close" withField:@"Connection"];
+    [_responseHead setHeadValue:@"text/html; charset=utf-8" withField:@"Content-Type"];
 }
 
 - (BOOL)delegateCheck {
@@ -432,7 +434,7 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
 }
 
 - (NSData *)readAllHeadData {
-    [_responseHead setHeadValue:@(_bodyDataLength).stringValue WithField:@"Content-Length"];
+    [_responseHead setHeadValue:@(_bodyDataLength).stringValue withField:@"Content-Length"];
 //    NSLog(@"%@",_responseHead.headDic);
     return [_responseHead dataOfHead];
 }
@@ -443,9 +445,9 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
         _bodyDataOffset = _data.length;
         data = _data;
     } else {
-        NSUInteger length = kZGHTTPDataReadMax;
+        NSUInteger length = kVVHTTPDataReadMax;
         if (_bodyDataOffset >= _bodyDataLength) return nil;
-        if (_bodyDataOffset + kZGHTTPDataReadMax >= _bodyDataLength) length = _bodyDataLength - _bodyDataOffset;
+        if (_bodyDataOffset + kVVHTTPDataReadMax >= _bodyDataLength) length = _bodyDataLength - _bodyDataOffset;
 
         if (_delegateEnabled && [_delegate respondsToSelector:@selector(readResource:atOffset:length:head:)]) {
             data = [_delegate readResource:_filePath atOffset:_bodyDataOffset length:length head:_requestHead];
@@ -461,65 +463,6 @@ NSUInteger const kZGHTTPDataReadMax = HUGE_VALL;
         }
     }
     return data;
-}
-
-@end
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wincomplete-implementation"
-
-@implementation VVHTTPResponseHead (ZGHTTPPrivateAPI)
-
-+ (instancetype)initWithRequestHead:(VVHTTPRequestHead *)head {
-    return [[self alloc] initWithRequestHead:head];
-}
-
-+ (instancetype)initWithError:(NSError *)error requestHead:(VVHTTPRequestHead *)head {
-    return [[self alloc] initWithError:error requestHead:head];
-}
-
-- (instancetype)initWithError:(NSError *)error requestHead:(VVHTTPRequestHead *)head {
-    if (self = [self initWithRequestHead:head]) {
-        self.stateCode = error.code;
-        self.stateDesc = [error.domain stringByRemovingPercentEncoding];
-        if (error) [self setHeadValue:@"close" WithField:@"Connection"];
-    }
-    return self;
-}
-
-- (instancetype)initWithRequestHead:(VVHTTPRequestHead *)head {
-    if (self = [self init]) {
-        NSDate *date = [NSDate date];
-        NSString *dataStr = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterFullStyle timeStyle:NSDateFormatterFullStyle];
-        NSDictionary *dic = @{
-                @"Date": dataStr,
-                @"Server": @"VVHTTPServer",
-                @"Accept-Ranges": @"bytes"
-        };
-        self.headDict = dic;
-        self.pro = head.pro;
-        self.version = head.version;
-        self.stateCode = [head hasRangeHead] ? 206 : 200;
-        self.stateDesc = @"OK";
-    }
-    return self;
-}
-
-- (void)setHeadValue:(NSString *)value WithField:(NSString *)field {
-    if (value == nil || field == nil)return;
-    NSMutableDictionary *dic = self.headDict.mutableCopy;
-    dic[field] = value;
-    self.headDict = dic;
-}
-
-- (NSData *)dataOfHead {
-    NSMutableString *headStr = @"".mutableCopy;
-    [headStr appendFormat:@"%@/%@ %zd %@\r\n", self.pro, self.version, self.stateCode, self.stateDesc];
-    [self.headDict enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
-        [headStr appendFormat:@"%@:%@\r\n", key, obj];
-    }];
-    [headStr appendString:@"\r\n"];
-    return [headStr dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end
