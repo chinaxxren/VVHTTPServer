@@ -9,14 +9,12 @@
 #import "AppDelegate.h"
 
 #import "VVHTTPServer.h"
-#import "VVHTTPRequestDelegate.h"
-#import "VVHTTPResponseDelegate.h"
 
 #include <arpa/inet.h>
 #include <net/if.h>
 #include <ifaddrs.h>
 
-@interface AppDelegate () <VVHTTPRequestDelegate, VVHTTPResponseDelegate>
+@interface AppDelegate ()
 
 @property(nonatomic, strong) VVHTTPServer *httpServer;
 

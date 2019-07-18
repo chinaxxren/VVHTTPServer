@@ -10,9 +10,6 @@
 
 @end
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wincomplete-implementation"
-
 @implementation VVHTTPRequestHead (NSData)
 
 + (instancetype)initWithData:(NSData *)data {
@@ -21,12 +18,12 @@
 
 - (instancetype)initWithData:(NSData *)data {
     if (self = [self init]) {
-        if (![self parseData:data])return nil;
+        if (![self loadData:data])return nil;
     }
     return self;
 }
 
-- (BOOL)parseData:(NSData *)data {
+- (BOOL)loadData:(NSData *)data {
     NSString *headStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSArray<NSString *> *headArray = [headStr componentsSeparatedByString:@"\r\n"];
     NSMutableDictionary *headDict = @{}.mutableCopy;

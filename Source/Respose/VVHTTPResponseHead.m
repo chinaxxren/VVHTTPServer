@@ -32,15 +32,18 @@
 - (instancetype)initWithRequestHead:(VVHTTPRequestHead *)head {
     if (self = [self init]) {
         NSDate *date = [NSDate date];
-        NSString *dataStr = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterFullStyle timeStyle:NSDateFormatterFullStyle];
-        NSDictionary *dic = @{
+        NSString *dataStr = [NSDateFormatter localizedStringFromDate:date
+                                                           dateStyle:NSDateFormatterFullStyle
+                                                           timeStyle:NSDateFormatterFullStyle];
+        NSDictionary *headDict = @{
                 @"Date": dataStr,
                 @"Server": @"HTTPServer",
                 @"Accept-Ranges": @"bytes"
         };
-        self.headDict = dic;
+        self.headDict = headDict;
         self.pro = head.pro;
         self.version = head.version;
+
         self.stateCode = [head hasRangeHead] ? 206 : 200;
         self.stateDesc = @"OK";
     }
@@ -49,13 +52,13 @@
 
 - (void)setHeadValue:(NSString *)value withField:(NSString *)field {
     if (value == nil || field == nil)return;
-    NSMutableDictionary *dic = self.headDict.mutableCopy;
-    dic[field] = value;
-    self.headDict = dic;
+    NSMutableDictionary *headDict = self.headDict.mutableCopy;
+    headDict[field] = value;
+    self.headDict = headDict;
 }
 
 - (NSData *)dataOfHead {
-    NSMutableString *headStr = @"".mutableCopy;
+    NSMutableString *headStr = [NSMutableString new];
     [headStr appendFormat:@"%@/%@ %zd %@\r\n", self.pro, self.version, self.stateCode, self.stateDesc];
     [self.headDict enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
         [headStr appendFormat:@"%@:%@\r\n", key, obj];

@@ -31,9 +31,3 @@ typedef void(^VVHTTPTaskCompleteBlock)(VVHTTPConnectTask *task);
 - (void)execute;
 
 @end
-
-@interface VVHTTPConfig (ZGHTTPPrivateAPI)
-
-@property(nonatomic, strong) dispatch_queue_t taskQueue;
-
-@end

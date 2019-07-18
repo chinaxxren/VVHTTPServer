@@ -18,4 +18,6 @@
 @property(nonatomic, weak) id <VVHTTPRequestDelegate> requestDelegate;
 @property(nonatomic, weak) id <VVHTTPResponseDelegate> responseDelegate;
 
+@property(nonatomic, strong) dispatch_queue_t taskQueue;
+
 @end

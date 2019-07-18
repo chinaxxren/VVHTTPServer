@@ -31,7 +31,7 @@
 
 - (instancetype)initWithRequestHead:(VVHTTPRequestHead *)head
                            delegate:(id <VVHTTPResponseDelegate>)delegate
-                            rootDir:(NSString *)dir;
+                            rootDir:(NSString *)rootDir;
 
 
 - (BOOL)shouldConnectKeepLive;

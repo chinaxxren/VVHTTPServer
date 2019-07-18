@@ -9,6 +9,15 @@
 #import "VVHTTPConnectTask.h"
 #import "VVHTTPResponseHandeler.h"
 
+
+NSTimeInterval kVVHTTPConnectTimeout = 20;
+
+long kVVHTTPResquestHeadTag = 100;
+long kVVHTTPResquestBodyTag = 101;
+long kVVHTTPResponseHeadTag = 102;
+long kVVHTTPResponseBodyTag = 103;
+long kVVHTTPResquestErrorTag = 108;
+
 @interface VVHTTPConnectTask () <GCDAsyncSocketDelegate>
 
 @property(nonatomic, readonly) VVHTTPConfig *config;
@@ -20,14 +29,6 @@
 @end
 
 @implementation VVHTTPConnectTask
-
-NSTimeInterval kVVHTTPConnectTimeout = 20;
-
-long kVVHTTPResquestHeadTag = 100;
-long kVVHTTPResquestBodyTag = 101;
-long kVVHTTPResponseHeadTag = 102;
-long kVVHTTPResponseBodyTag = 103;
-long kVVHTTPResquestErrorTag = 108;
 
 + (instancetype)initWithConfig:(VVHTTPConfig *)config
                         socket:(GCDAsyncSocket *)socket
@@ -95,7 +96,6 @@ long kVVHTTPResquestErrorTag = 108;
     }
 }
 
-
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag {
     if (tag == kVVHTTPResquestErrorTag) {
         [_socket disconnectAfterWriting];
@@ -106,7 +106,6 @@ long kVVHTTPResquestErrorTag = 108;
     }
 }
 
-
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
     _responseHandeler = nil;
     _requestHandler = nil;
@@ -114,13 +113,3 @@ long kVVHTTPResquestErrorTag = 108;
 }
 
 @end
-
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-property-implementation"
-
-@implementation VVHTTPConfig (ZGHTTPPrivateAPI)
-
-@end
-
-#pragma clang diagnostic pop

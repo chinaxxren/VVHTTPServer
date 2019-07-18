@@ -13,8 +13,6 @@
 
 @interface VVHTTPConfig ()
 
-@property(nonatomic, strong) dispatch_queue_t taskQueue;
-
 @end
 
 @implementation VVHTTPConfig

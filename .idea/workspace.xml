@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba61955d-d8c8-47a9-958f-cf6f5f5e29d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/Request/VVHTTPRequestDelegate.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseDelegate.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/VVHTTPResourceInfo.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/VVHTTPResourceInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Respose/VVHTTPHTMLDirectory.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Respose/VVHTTPHTMLDirectory.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPConfig.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPConfig.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPConfig.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPRequestHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Request/VVHTTPRequestHandler.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPRequestHandler.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Request/VVHTTPRequestHandler.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPResponseHandeler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VVHTTPResponseHandeler.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/AppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/AppDelegate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/VVHTTPConnectTask.m" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VVHTTPConnectTask.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVHTTPServer.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/VVHTTPServer.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVHTTPServer.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/VVHTTPServer.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +22,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.h">
+        <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseDelegate.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+            <state relative-caret-position="357">
+              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/VVHTTPServer.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+              <folding>
+                <element signature="e#121#145#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,47 +45,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-313">
-              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            <state relative-caret-position="-75">
+              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.m">
+        <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-472">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-              <folding>
-                <element signature="e#131#165#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseDelegate.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/VVHTTPResourceInfo.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/VVHTTPResourceInfo.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            <state relative-caret-position="442">
+              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -88,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="53" column="24" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+            <state relative-caret-position="816">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding>
                 <element signature="e#93#123#0" expanded="true" />
               </folding>
@@ -98,34 +73,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Request/VVHTTPRequestHandler.h">
+        <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="231">
+              <caret line="247" column="18" selection-start-line="247" selection-start-column="18" selection-end-line="247" selection-end-column="18" />
               <folding>
-                <element signature="e#129#162#0" expanded="true" />
+                <element signature="e#131#165#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Source/Request/VVHTTPRequestHandler.m">
+        <entry file="file://$PROJECT_DIR$/Source/VVHTTPConnectTask.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="596">
+              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
               <folding>
-                <element signature="e#129#161#0" expanded="true" />
+                <element signature="e#126#155#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.h">
+        <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+            <state relative-caret-position="253">
+              <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+              <folding>
+                <element signature="e#131#164#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPHTMLDirectory.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="57" column="30" lean-forward="true" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+              <folding>
+                <element signature="e#93#124#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPHTMLDirectory.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="47" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -141,8 +140,6 @@
       <find>_queryStr</find>
       <find>queryStr</find>
       <find>fileInput</find>
-      <find>dataOfHead</find>
-      <find>fileOutput</find>
       <find>readBodyData</find>
       <find>loadBodyData</find>
       <find>ZGHTTPHTMLDirectory</find>
@@ -150,6 +147,9 @@
       <find>zenggen</find>
       <find>filePath</find>
       <find>❌</find>
+      <find>dataOfHead</find>
+      <find>htmlData</find>
+      <find>fileOutput</find>
     </findStrings>
     <replaceStrings>
       <replace>waqu</replace>
@@ -173,12 +173,10 @@
         <option value="$PROJECT_DIR$/ZGHTTPServer/ZGHTTPRequestHandler.m" />
         <option value="$PROJECT_DIR$/ZGHTTPServer/ZGHTTPResponseHandeler.m" />
         <option value="$PROJECT_DIR$/Demo/web.html" />
-        <option value="$PROJECT_DIR$/Demo/AppDelegate.m" />
         <option value="$PROJECT_DIR$/Source/VVHTTPServer.h" />
         <option value="$PROJECT_DIR$/Source/VVHTTPResponseHandeler.h" />
         <option value="$PROJECT_DIR$/Source/VVHTTPServer.m" />
         <option value="$PROJECT_DIR$/Source/VVHTTPConnectTask.h" />
-        <option value="$PROJECT_DIR$/Source/VVHTTPConnectTask.m" />
         <option value="$PROJECT_DIR$/Source/VVHTTPRequestHandler.m" />
         <option value="$PROJECT_DIR$/Source/VVHTTPResponseHandeler.m" />
         <option value="$PROJECT_DIR$/Source/Request/VVHTTPRequestHandler.h" />
@@ -189,12 +187,16 @@
         <option value="$PROJECT_DIR$/Source/VVHTTPResourceInfo.h" />
         <option value="$PROJECT_DIR$/Source/VVHTTPConfig.m" />
         <option value="$PROJECT_DIR$/Source/VVHTTPResourceInfo.m" />
-        <option value="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.m" />
-        <option value="$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.m" />
         <option value="$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.h" />
         <option value="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.h" />
-        <option value="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.m" />
         <option value="$PROJECT_DIR$/Source/Request/VVHTTPRequestHandler.m" />
+        <option value="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.m" />
+        <option value="$PROJECT_DIR$/Demo/AppDelegate.m" />
+        <option value="$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.m" />
+        <option value="$PROJECT_DIR$/Source/Respose/VVHTTPHTMLDirectory.h" />
+        <option value="$PROJECT_DIR$/Source/Respose/VVHTTPHTMLDirectory.m" />
+        <option value="$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.m" />
+        <option value="$PROJECT_DIR$/Source/VVHTTPConnectTask.m" />
       </list>
     </option>
   </component>
@@ -298,7 +300,7 @@
       <workItem from="1551449633211" duration="1654000" />
       <workItem from="1552290216299" duration="5025000" />
       <workItem from="1552297869124" duration="251000" />
-      <workItem from="1563431991517" duration="4772000" />
+      <workItem from="1563431991517" duration="6962000" />
     </task>
     <task id="LOCAL-00001" summary="优化代码">
       <created>1563435847839</created>
@@ -314,17 +316,24 @@
       <option name="project" value="LOCAL" />
       <updated>1563437028105</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="优化代码">
+      <created>1563438657312</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1563438657312</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11702000" />
+    <option name="totallyTimeSpent" value="13892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="991" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25885227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -337,7 +346,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32990867" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32990867" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -386,13 +395,6 @@
     <entry file="file://$PROJECT_DIR$/MMHTTPServer/MMHTTPResponseHandeler.h" />
     <entry file="file://$PROJECT_DIR$/MMHTTPServer/MMHTTPResponseHandeler.m" />
     <entry file="file://$PROJECT_DIR$/MMHTTPServer/MMHTTPConnectTask.h" />
-    <entry file="file://$PROJECT_DIR$/Pods/Headers/Public/CocoaAsyncSocket/GCDAsyncSocket.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="324" column="8" selection-start-line="324" selection-start-column="8" selection-end-line="324" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MMHTTPServer/MMHTTPServer.h" />
     <entry file="file://$PROJECT_DIR$/MMHTTPServer/MMHTTPConnectTask.m" />
     <entry file="file://$PROJECT_DIR$/SampleHttpService/ViewController.m" />
@@ -411,35 +413,8 @@
     <entry file="file://$PROJECT_DIR$/Demo/ViewController.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo/AppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding>
-            <element signature="e#120#143#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Demo/headstyle">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/VVHTTPServer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/VVHTTPServer.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="108" column="40" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
-          <folding>
-            <element signature="e#121#145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Source/VVHTTPConnectTask.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -455,30 +430,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/VVHTTPConnectTask.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
-          <folding>
-            <element signature="e#126#155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/Request/VVHTTPRequestDelegate.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
-          <folding>
-            <element signature="e#131#164#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -510,22 +465,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseDelegate.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-472">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding>
-            <element signature="e#131#165#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Demo/AppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -534,33 +475,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-313">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="53" column="24" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-          <folding>
-            <element signature="e#93#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/Request/VVHTTPRequestHandler.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
+        <state relative-caret-position="493">
           <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#129#162#0" expanded="true" />
@@ -568,12 +485,124 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/Headers/Public/CocoaAsyncSocket/GCDAsyncSocket.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="637" column="8" selection-start-line="637" selection-start-column="8" selection-end-line="637" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Source/Request/VVHTTPRequestHandler.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+        <state relative-caret-position="275">
+          <caret line="111" column="25" lean-forward="true" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
           <folding>
             <element signature="e#129#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding>
+            <element signature="e#120#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/VVHTTPServer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/VVHTTPServer.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding>
+            <element signature="e#121#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Request/VVHTTPRequestHead.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHead.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="e#93#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+          <folding>
+            <element signature="e#131#164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPHTMLDirectory.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPHTMLDirectory.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="57" column="30" lean-forward="true" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+          <folding>
+            <element signature="e#93#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Respose/VVHTTPResponseHandeler.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="247" column="18" selection-start-line="247" selection-start-column="18" selection-end-line="247" selection-end-column="18" />
+          <folding>
+            <element signature="e#131#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/VVHTTPConnectTask.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+          <folding>
+            <element signature="e#126#155#0" expanded="true" />
           </folding>
         </state>
       </provider>
