@@ -66,13 +66,15 @@ long kVVHTTPResquestErrorTag = 108;
 
 - (void)checkResponseFinish {
     if ([_responseHandeler bodyEnd]) {
-        if (![_responseHandeler shouldConnectKeepLive])
+        if (![_responseHandeler shouldConnectKeepLive]) {
             [_socket disconnect];
+        }
     } else {
         NSData *data = [_responseHandeler readBodyData];
         [_socket writeData:data withTimeout:kVVHTTPConnectTimeout tag:kVVHTTPResponseBodyTag];
-        if ([_responseHandeler bodyEnd])
+        if ([_responseHandeler bodyEnd]) {
             [_socket disconnectAfterWriting];
+        }
     }
 }
 
