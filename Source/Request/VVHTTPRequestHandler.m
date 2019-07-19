@@ -90,7 +90,7 @@
                                userInfo:nil];
     NSError *error = [self refuseError];
     if (error) return error;
-    if ([_requestHead.method isEqualToString:@"POST"] || [_requestHead.method isEqualToString:@"GET"]) {
+    if ([_requestHead.method isEqualToString:@"POST"]) {
         if (_bodyDataLength == 0)
             return [NSError errorWithDomain:[NSString stringWithFormat:@"请求参数出错，%@方法需要指定body长度!", _requestHead.method]
                                        code:411
