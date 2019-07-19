@@ -3,9 +3,9 @@
 // Copyright (c) 2019 zenggen. All rights reserved.
 //
 
-#import "VVHTTPResourceInfo.h"
+#import "VVHTTPResource.h"
 
 
-@implementation VVHTTPResourceInfo
+@implementation VVHTTPResource
 
 @end

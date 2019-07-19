@@ -33,9 +33,9 @@
 
 - (instancetype)initWithConfig:(void (^)(VVHTTPConfig *))configBlock {
     if (self = [self init]) {
-        _taskQueue = dispatch_queue_create("com.waqu.taskQueue", NULL);
-        _serverQueue = dispatch_queue_create("com.waqu.serverQueue", NULL);
-        
+        _taskQueue = dispatch_queue_create("com.waqu.task.queue", NULL);
+        _serverQueue = dispatch_queue_create("com.waqu.server.queue", NULL);
+
         _asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:_serverQueue];
         _config = [[VVHTTPConfig alloc] init];
         if (configBlock) configBlock(_config);

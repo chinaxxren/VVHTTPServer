@@ -5,17 +5,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class VVHTTPResourceInfo;
+@class VVHTTPResource;
 
 
 @interface VVHTTPHTMLDirectory : NSObject
 
 @property(nonatomic, readonly) NSData *htmlData;
-@property(nonatomic, readonly) NSArray<VVHTTPResourceInfo *> *resourceInfos;
+@property(nonatomic, readonly) NSArray<VVHTTPResource *> *resources;
 
-+ (instancetype)initWithResources:(NSArray<VVHTTPResourceInfo *> *)resources
++ (instancetype)initWithResources:(NSArray<VVHTTPResource *> *)resources
                           dirName:(NSString *)name;
 
-- (instancetype)initWithResources:(NSArray<VVHTTPResourceInfo *> *)resourceInfos
+- (instancetype)initWithResources:(NSArray<VVHTTPResource *> *)resources
                           dirName:(NSString *)name;
 @end

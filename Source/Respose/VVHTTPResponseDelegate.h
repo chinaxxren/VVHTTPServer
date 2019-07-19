@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-@class VVHTTPResourceInfo;
+@class VVHTTPResource;
 @class VVHTTPRequestHead;
 
 @protocol VVHTTPResponseDelegate <NSObject>
@@ -27,7 +27,7 @@
 
 - (BOOL)isResourceExist:(VVHTTPRequestHead *)head;
 
-- (NSArray<VVHTTPResourceInfo *> *)dirItemInfoList:(VVHTTPRequestHead *)head;
+- (NSArray<VVHTTPResource *> *)dirItemInfoList:(VVHTTPRequestHead *)head;
 
 - (u_int64_t)resourceLength:(VVHTTPRequestHead *)head;
 

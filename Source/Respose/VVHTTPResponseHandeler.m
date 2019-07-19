@@ -8,7 +8,7 @@
 
 #import "VVHTTPResponseHandeler.h"
 
-#import "VVHTTPResourceInfo.h"
+#import "VVHTTPResource.h"
 #import "VVHTTPResponseHead.h"
 #import "VVHTTPResponseDelegate.h"
 #import "VVHTTPRequestHead.h"
@@ -94,6 +94,7 @@ NSUInteger const kVVHTTPDataReadMax = HUGE_VALL;
     } else {
         isResourceExist = [[NSFileManager defaultManager] fileExistsAtPath:_filePath];
     }
+
     if (!isResourceExist) {
         if ([self isFavicon]) {
             self.filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"favicon.ico"];
@@ -155,18 +156,16 @@ NSUInteger const kVVHTTPDataReadMax = HUGE_VALL;
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     for (NSString *path in [fileManager contentsOfDirectoryAtPath:_filePath error:nil]) {
-        VVHTTPResourceInfo *resourceInfo = [VVHTTPResourceInfo new];
+        VVHTTPResource *resourceInfo = [VVHTTPResource new];
+
         NSError *error;
         NSDictionary<NSFileAttributeKey, id> *fileAttributes = [fileManager attributesOfItemAtPath:[_filePath stringByAppendingPathComponent:path] error:&error];
         resourceInfo.isDirectory = [fileAttributes.fileType isEqualToString:NSFileTypeDirectory];
-        u_int64_t length = fileAttributes.fileSize;
-        if (resourceInfo.isDirectory) length = 0;
-        resourceInfo.size = length;
+        resourceInfo.size = resourceInfo.isDirectory ? 0 : fileAttributes.fileSize;
         NSDate *date = fileAttributes[NSFileModificationDate];
-        NSString *dateStr = [dateFormatter stringFromDate:date];
-
+        NSString *modifyTime = [dateFormatter stringFromDate:date];
         resourceInfo.name = [path lastPathComponent];
-        resourceInfo.modifyTime = dateStr;
+        resourceInfo.modifyTime = modifyTime;
         resourceInfo.relativeUrl = [path stringByReplacingOccurrencesOfString:_rootDir withString:@""];
         [resourceInfos addObject:resourceInfo];
     }
@@ -202,11 +201,7 @@ NSUInteger const kVVHTTPDataReadMax = HUGE_VALL;
 
     if (!_delegateEnabled) return YES;
 
-    if (delegateLegal) {
-        return YES;
-    } else {
-        return NO;
-    }
+    return delegateLegal != nil;
 }
 
 - (BOOL)isDir {

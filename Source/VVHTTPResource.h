@@ -6,12 +6,12 @@
 #import <Foundation/Foundation.h>
 
 
-@interface VVHTTPResourceInfo : NSObject
+@interface VVHTTPResource : NSObject
 
 @property(nonatomic, copy) NSString *name;
-@property(nonatomic, assign) BOOL isDirectory;
 @property(nonatomic, copy) NSString *relativeUrl;
 @property(nonatomic, copy) NSString *modifyTime;
+@property(nonatomic, assign) BOOL isDirectory;
 @property(nonatomic, assign) u_int64_t size;
 
 @end

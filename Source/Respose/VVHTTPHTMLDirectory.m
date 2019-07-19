@@ -5,7 +5,7 @@
 
 #import "VVHTTPHTMLDirectory.h"
 
-#import "VVHTTPResourceInfo.h"
+#import "VVHTTPResource.h"
 
 static NSString *const VVHTTPHTMLSortKey = @"sortType";
 static NSString *const VVHTTPHTMLNameAscending = @"name-ascending";
@@ -17,15 +17,15 @@ static NSString *const VVHTTPHTMLSizeDescending = @"size-descending";
 
 @implementation VVHTTPHTMLDirectory
 
-+ (instancetype)initWithResources:(NSArray<VVHTTPResourceInfo *> *)resources
++ (instancetype)initWithResources:(NSArray<VVHTTPResource *> *)resources
                           dirName:(NSString *)name {
     return [[self alloc] initWithResources:resources dirName:name];
 }
 
-- (instancetype)initWithResources:(NSArray<VVHTTPResourceInfo *> *)resourceInfos
+- (instancetype)initWithResources:(NSArray<VVHTTPResource *> *)resources
                           dirName:(NSString *)dirPath {
     if (self = [self init]) {
-        _resourceInfos = [self sortData:resourceInfos withPath:dirPath];
+        _resources = [self sortData:resources withPath:dirPath];
         NSArray *array = [dirPath componentsSeparatedByString:@"?"];
         NSString *name = array.firstObject;
         NSString *sortValue = [self getSortTypeWithPath:dirPath];
@@ -66,7 +66,7 @@ static NSString *const VVHTTPHTMLSizeDescending = @"size-descending";
                               "<td>&nbsp;-</td>"
                               "<td>&nbsp;&nbsp;-</td>"
                               "</tr>", sort];
-        [_resourceInfos enumerateObjectsUsingBlock:^(VVHTTPResourceInfo *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        [_resources enumerateObjectsUsingBlock:^(VVHTTPResource *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
             NSString *url = obj.relativeUrl, *size = [self formmatSize:obj.size];
             NSString *symble = @"📄";
             if (obj.isDirectory) {
@@ -120,9 +120,9 @@ static NSString *const VVHTTPHTMLSizeDescending = @"size-descending";
     return sortType;
 }
 
-- (NSArray *)sortData:(NSArray<VVHTTPResourceInfo *> *)array withPath:(NSString *)path {
+- (NSArray *)sortData:(NSArray<VVHTTPResource *> *)array withPath:(NSString *)path {
     NSString *sortType = [self getSortTypeWithPath:path];
-    NSArray<VVHTTPResourceInfo *> *resArray = [array sortedArrayUsingComparator:^NSComparisonResult(VVHTTPResourceInfo *obj1, VVHTTPResourceInfo *obj2) {
+    NSArray<VVHTTPResource *> *resArray = [array sortedArrayUsingComparator:^NSComparisonResult(VVHTTPResource *obj1, VVHTTPResource *obj2) {
         NSComparisonResult res;
         if ([sortType isEqualToString:VVHTTPHTMLNameAscending]) {
             res = [obj1.name compare:obj2.name options:NSCaseInsensitiveSearch];
